@@ -1,6 +1,7 @@
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
 const scissorButton = document.getElementById("scissorButton");
+const restartButton = document.getElementById("restartButton")
 
 const playerResultLabel = document.getElementById("playerResultLabel");
 const botResultLabel = document.getElementById("botResultLabel");
@@ -9,6 +10,9 @@ const finalResultLabel = document.getElementById("finalResultLabel");
 const playerScoreDiv = document.getElementById("playerScore");
 const botScoreDiv = document.getElementById("botScore");
 
+const playerImg = document.getElementById("playerImg");
+const botImg = document.getElementById("botImg");
+
 let playerScore = 0;
 let botScore = 0;
 
@@ -16,26 +20,51 @@ const rockPaperScissor = ["Rock", "Paper", "Scissor"]
 
 
 rockButton.addEventListener("click", () => {
-    playerResultLabel.innerHTML = rockButton.value;
+    const playerObject = rockButton.value
+    playerResultLabel.innerHTML = playerObject;
     playGame();
     scoreFuntion();
+    replaceImg(playerObject, botResultLabel.innerHTML);
 })
 
 paperButton.addEventListener("click", () => {
-    playerResultLabel.innerHTML = paperButton.value;
+    const playerObject = paperButton.value;
+    playerResultLabel.innerHTML = playerObject;
     playGame();
     scoreFuntion();
+    replaceImg(playerObject, botResultLabel.innerHTML);
 })
 
 scissorButton.addEventListener("click", () => {
-    playerResultLabel.innerHTML = scissorButton.value;
+    const playerObject = scissorButton.value;
+    playerResultLabel.innerHTML = playerObject;
     playGame();
     scoreFuntion();
+    replaceImg(playerObject, botResultLabel.innerHTML);
+})
+
+restartButton.addEventListener("click", () => {
+    restartGame();
 })
 
 function scoreFuntion () {
     playerScoreDiv.innerHTML = playerScore;
     botScoreDiv.innerHTML = botScore;
+}
+
+function replaceImg (playerObject, botObject) {
+    playerImg.src = "img/" + playerObject + ".png";
+    botImg.src = "img/" + botObject + ".png";
+}
+
+function restartGame() {
+    playerResultLabel.innerHTML = "";
+    botResultLabel.innerHTML = "";
+    finalResultLabel.innerHTML = "";
+    playerScoreDiv.innerHTML = "0";
+    botScoreDiv.innerHTML = "0";
+    playerImg.src = "img/Rock.png";
+    botImg.src = "img/Rock.png";
 }
 
 function playGame() {
