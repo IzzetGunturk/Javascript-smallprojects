@@ -65,6 +65,9 @@ function restartGame() {
     botScoreDiv.innerHTML = "0";
     playerImg.src = "img/Rock.png";
     botImg.src = "img/Rock.png";
+
+    playerScore = 0;
+    botScore = 0;
 }
 
 function playGame() {
