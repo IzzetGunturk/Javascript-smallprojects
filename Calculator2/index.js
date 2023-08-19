@@ -14,8 +14,12 @@ buttonClear.addEventListener("click", function () {
 });
 
 buttonResult.addEventListener('click', function () {
+    calculate();
+});
+
+function calculate() {
     const inputResults = resultDisplay.value;
     const results = eval(inputResults);
 
     resultDisplay.value = results;
-});
+}
