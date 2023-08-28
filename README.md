@@ -1,4 +1,4 @@
-# 👨‍💻 Small projects
+# 👨‍💻 Small projects JavaScript
 
 I made some small projects to improve and repeat my Javascript skills. 
 
