@@ -18,8 +18,7 @@ buttonResult.addEventListener('click', function () {
 });
 
 function calculate() {
-    const inputResults = resultDisplay.value;
-    const results = eval(inputResults);
+    const results = eval(resultDisplay.value);
 
     resultDisplay.value = results;
 }
